@@ -1,3 +1,9 @@
 numpy
 pandas
 seaborn
+scikit-learn
+catboost
+xgboost
+Flask
+
+# -e .
