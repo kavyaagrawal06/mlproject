@@ -6,4 +6,16 @@ catboost
 xgboost
 Flask
 
-# -e .
+-e . #means:
+
+#"Register my current ML project as an editable package."
+
+#Suppose you change:
+
+#model_trainer.py
+
+#You don't need to reinstall it every time.
+
+#Your environment points to your development code.
+
+#That's why it's called editable installation.

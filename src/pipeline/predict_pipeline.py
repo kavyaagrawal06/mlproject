@@ -27,7 +27,7 @@ class PredictPipeline:
 
 
 class CustomData: #This class collects user input
-    def __init__(  self, #The constructor receives all user inputs.
+    def __init__(  self, #This constructor receives all user inputs.
         gender: str,
         race_ethnicity: str,
         parental_level_of_education,

@@ -4,8 +4,8 @@ from dataclasses import dataclass
 import numpy as np 
 import pandas as pd
 from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer # handling missing values
+from sklearn.pipeline import Pipeline #A Pipeline is generally used when you want to apply a sequence of operations to the same input data.
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 
 from src.exception import CustomException
@@ -16,7 +16,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -37,10 +37,10 @@ class DataTransformation:
                 "test_preparation_course",
             ]
 
-            num_pipeline= Pipeline(
+            num_pipeline= Pipeline(  #num_pipeline = a sequence of preprocessing operations for numerical data: first handle missing values, then scale the values.
                 steps=[
-                ("imputer",SimpleImputer(strategy="median")),
-                ("scaler",StandardScaler())
+                ("imputer",SimpleImputer(strategy="median")), #f a numerical column has missing values (NaN), it replaces them with the median of that column.
+                ("scaler",StandardScaler())  #It standardizes the numerical values so that they have approximately:
 
                 ]
             )
